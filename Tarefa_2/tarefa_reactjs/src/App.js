@@ -6,8 +6,10 @@ import './App.css';
 function App() {
 
   
-  const [id,setId] = useState('')
-  const [descricao,setDescricao] = useState('')
+  const [id,setId] = useState(null)
+  const [nome,setNome] = useState('')
+  const [serie,setSerie] = useState('')
+  const [repeticao,setRepeticao] = useState('')
   const [listaTarefa,setListaTarefa] = useState([])
   // Chama os dados
   useEffect(() => {
@@ -34,28 +36,39 @@ function App() {
   function editarTarefa(id) {
     let item = listaTarefa.find(n => n.codigo === id)
     setId(item.codigo)
-    setDescricao(item.descricao)
-    document.querySelector('#descricao').focus()
+    setNome(item.nome)
+    setSerie(item.serie)
+    setRepeticao(item.repeticao)
+    
+    document.querySelector('#nome').focus()
+    document.querySelector('#serie').focus()
+    document.querySelector('#repeticao').focus()
+    
   }
   // Salva
   function salvar(event) {
     event.preventDefault();
+    console.log(id);
 
-    console.log(id)
-
-    if (id){let tarefa = {
+    let tarefa = {
       codigo:id,
-      descricao:descricao
-      
-    }
-    axios.put('http://localhost:3100/tarefa',tarefa).then(()=>{
-      buscar()
-    })
-    setId('')
-    setDescricao('')
+      nome:nome,
+      serie:serie,
+      repeticao:repeticao
+    };
+    
+    
 
-    console.log("tarefa", tarefa)}
-  }
+    axios.put('http://localhost:3100/tarefa',tarefa).then(()=>{
+      buscar();
+    });
+    setId(null)
+    setNome('')
+    setSerie('')
+    setRepeticao('')
+
+}
+  
   return (
     <div className='container'>
 
@@ -63,37 +76,59 @@ function App() {
 
       <div className='mb-3'>
         
-        <label className='form-label'  > Id do produto</label>
-        <input 
-        id='idTabela'
-        type="number" 
-        className='form-control' 
-        value={id} 
-        onChange={(event)=>setId(event.target.value)}
-        />
+
       
       </div>
-        <div className='mb-3'>
+
+      <div className='mb-3'>
       
-          <label className='form-label'> Nome do produto</label>
+          <label className='form-label'>Nome do exercício</label>
           <input 
-          id='descricaoTabela'
+          id='nomeTabela'
           type="text" 
           className='form-control' 
-          value={descricao} 
-          onChange={(event)=>setDescricao(event.target.value)}
+          value={nome} 
+          onChange={(event)=>setNome(event.target.value)}
           />
         
         </div>
+
+        <div className='mb-3'>
+      
+          <label className='form-label'>Quantidade de séries</label>
+          <input 
+          id='serieTabela'
+          type="number" 
+          className='form-control' 
+          value={serie} 
+          onChange={(event)=>setSerie(event.target.value)}
+          />
+        </div>
+
+        <div className='mb-3'>
+      
+          <label className='form-label'>Número de repeticões</label>
+          <input 
+          id='repeticaoTabela'
+          type="number" 
+          className='form-control' 
+          value={repeticao} 
+          onChange={(event)=>setRepeticao(event.target.value)}
+          />
+        </div>
+
         <button type='submit' className='btn btn-primary'>Salvar</button>
+        <p></p>
       </form>
 
       <table className="table">
         <thead>
           <tr>
             <th id="id">Id</th>
-            <th id="descricao">Nome</th>
-            <th id ="acoes" >Concluido</th>
+            <th id="nome">Nome do exercício</th>
+            <th id="serie">Quantidade de séries</th>
+            <th id="repeticao">Repeticões</th>
+            <th id ="acoes" >Concluído</th>
             <th id ="acoes" >Ações</th>
 
           </tr>
@@ -102,12 +137,15 @@ function App() {
           {
             listaTarefa.map((n,index) =>(
               <tr key={index}>
+
                 <td id="id">{n.codigo}</td>
-                <td>{n.descricao}</td>
+                <td>{n.nome}</td>
+                <td>{n.serie}</td>
+                <td>{n.repeticao}</td>
                 
 
                 <td id="checkbox">
-                  <input type="checkbox" class='checkbox'/>
+                  <input type="checkbox" className='checkbox'/>
                 </td>
 
                 <td id="botoes">
