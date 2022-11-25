@@ -124,7 +124,7 @@ function App() {
       <table className="table">
         <thead>
           <tr>
-            <th id="id">Id</th>
+
             <th id="nome">Nome do exercício</th>
             <th id="serie">Quantidade de séries</th>
             <th id="repeticao">Repeticões</th>
@@ -138,7 +138,7 @@ function App() {
             listaTarefa.map((n,index) =>(
               <tr key={index}>
 
-                <td id="id">{n.codigo}</td>
+
                 <td>{n.nome}</td>
                 <td>{n.serie}</td>
                 <td>{n.repeticao}</td>
