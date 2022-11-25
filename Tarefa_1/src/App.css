@@ -1,6 +1,7 @@
 body{
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
+
 .titulo{
 color: rgb(255, 0, 0);
 font-size: 40px
@@ -24,7 +25,6 @@ box-shadow: 8px 8px 10px rgba(1, 91, 202, 0.64);
 }
 
 .fotos{
-
   border-radius: 20px;
   margin-left: 30px;
   margin-right: 30px;
@@ -36,10 +36,7 @@ box-shadow: 8px 8px 10px rgba(1, 91, 202, 0.64);
   justify-content: space-evenly;
 }
 
-
-  
 .grupo{
-  
   width: 250px;
   border: 1px solid rgb(255, 255, 255);
   border-radius: 30px;
