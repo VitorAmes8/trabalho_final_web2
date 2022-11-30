@@ -74,17 +74,13 @@ function App() {
 
       <form onSubmit={(event) => salvar(event)}>
 
-      <div className='mb-3'>
-        
 
       
-      </div>
-
       <div className='mb-3'>
-      
+      <br></br>
           <label className='form-label'>Nome do exercício</label>
           <input 
-          id='nomeTabela'
+          id='caixa'
           type="text" 
           className='form-control' 
           value={nome} 
@@ -92,12 +88,12 @@ function App() {
           />
         
         </div>
-
+        
         <div className='mb-3'>
       
           <label className='form-label'>Quantidade de séries</label>
           <input 
-          id='serieTabela'
+          id='caixa'
           type="number" 
           className='form-control' 
           value={serie} 
@@ -109,26 +105,26 @@ function App() {
       
           <label className='form-label'>Número de repeticões</label>
           <input 
-          id='repeticaoTabela'
+          id='caixa'
           type="number" 
           className='form-control' 
           value={repeticao} 
           onChange={(event)=>setRepeticao(event.target.value)}
           />
         </div>
+        
+        <button id="salvar" type='submit' className='btn btn-primary'>Salvar</button>
 
-        <button type='submit' className='btn btn-primary'>Salvar</button>
-        <p></p>
       </form>
 
-      <table className="table">
+      <table id="tabela" className="table">
         <thead>
           <tr>
 
             <th id="nome">Nome do exercício</th>
-            <th id="serie">Quantidade de séries</th>
-            <th id="repeticao">Repeticões</th>
-            <th id ="acoes" >Concluído</th>
+            <th id="numeros">Quantidade de séries</th>
+            <th id="numeros">Repeticões</th>
+            <th id ="concluido" >Concluído</th>
             <th id ="acoes" >Ações</th>
 
           </tr>
@@ -136,32 +132,29 @@ function App() {
         <tbody>
           {
             listaTarefa.map((n,index) =>(
-              <tr key={index}>
+              <tr id="lista" key={index}>
 
-
-                <td>{n.nome}</td>
-                <td>{n.serie}</td>
-                <td>{n.repeticao}</td>
-                
-
-                <td id="checkbox">
+                <td id="nome">{n.nome}</td>
+                <td id="numeros">{n.serie}</td>
+                <td id="numeros">{n.repeticao}</td>
+            
+                <td id="concluido">
                   <input type="checkbox" className='checkbox'/>
                 </td>
 
                 <td id="botoes">
                   <button id="botao1" type="button" className='btn btn-info' onClick={() => editarTarefa(n.codigo)}>Editar</button>
-
                   <button id="botao2" type="button" className='btn btn-danger' onClick={() => excluirTarefa(n.codigo)}>Excluir</button>
                   </td>
-
-
-                  
+  
               </tr>
             ))
           }
         </tbody>
       </table>
+      
     </div>
+
   );
 }
 
