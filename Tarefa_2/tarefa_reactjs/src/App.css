@@ -1,0 +1,105 @@
+#nome{
+  width:200px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+#numeros{
+  width: 200px;
+  vertical-align: middle;
+}
+
+#acoes{
+  width: 250px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#concluido{
+    width: 200px;
+  text-align: center;
+}
+#botoes{
+  text-align: center;
+width: 200px;
+vertical-align: middle;
+}
+
+#botao1{
+  text-align: center;
+width: 80px;
+color: #000000;
+border-width: 2px;
+border-color: rgb(0, 0, 0);
+background-color: rgba(0, 81, 255, 0.975);
+font-weight:bold;
+}
+
+#botao2{
+  text-align: center;
+  margin-left: 20px;
+width: 80px;
+color: #000000;
+border-width: 2px;
+border-color: rgb(0, 0, 0);
+background-color: hsla(0, 94%, 49%, 0.935);
+font-weight:bold;
+}
+
+input.checkbox {
+  margin: 0 auto;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+thead{
+  background-color: hsla(60, 94%, 49%, 0.935);
+    color: #000000;
+}
+
+#tabela {
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  box-shadow: 0 0 20px rgba(255, 255, 0, 0.399);
+  font-size: 15px;
+  color: hsla(0, 0%, 0%, 0.883);
+  background-color: rgb(255, 245, 245);
+}
+
+.container{
+  background-color: #ffffffdf;
+  color: rgb(62, 62, 62);
+  font-weight:bold;
+}
+
+#caixa{
+  background-color: rgba(214, 214, 214, 0.749);
+  color: #000000;
+}
+
+#salvar{
+  color: #000000;
+  border-width: 2px;
+  border-color: rgb(0, 0, 0);
+  background-color: rgba(0, 255, 60, 0.975);
+  font-weight:bold;
+}
+
+#root{
+  background-color: rgba(0, 0, 0, 0);
+  background: url(https://news.gympass.com/wp-content/uploads/2018/07/escolher-a-melhor-academia.jpg) no-repeat center center fixed; 
+  background-size: cover;
+}
+
+html{
+  background: url(https://news.gympass.com/wp-content/uploads/2018/07/escolher-a-melhor-academia.jpg) no-repeat center center fixed; 
+  background-size: cover;
+}
+
+
+
+
+
+
